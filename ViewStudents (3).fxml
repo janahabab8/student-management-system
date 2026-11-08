@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.finalpro.ViewStudentsController"
+      spacing="15"
+      prefWidth="600" prefHeight="500"
+      styleClass="main-container">
+
+    <Label text="View Students" styleClass="title-label"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Search by ID, Name, or Major" prefWidth="300"/>
+        <Button text="Search" onAction="#handleSearch" styleClass="main-button"/>
+        <Button text="Refresh" onAction="#handleRefresh" styleClass="main-button"/>
+    </HBox>
+
+    <TableView fx:id="studentsTable" prefHeight="350" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="Student ID" prefWidth="150"/>
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="220"/>
+            <TableColumn fx:id="majorColumn" text="Major" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="20">
+        <Label fx:id="totalLabel" text="Total Students: 0" style="-fx-font-weight: bold;"/>
+        <Button text="Back to Dashboard" onAction="#handleBack" styleClass="logout-button"/>
+    </HBox>
+
+</VBox>

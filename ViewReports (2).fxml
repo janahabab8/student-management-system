@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.finalpro.ViewReportsController"
+      spacing="15"
+      prefWidth="620" prefHeight="560"
+      styleClass="main-container">
+
+    <Label text="View Reports" styleClass="title-label"/>
+
+    <HBox spacing="10">
+        <ComboBox fx:id="studentComboBox" promptText="Select Student" prefWidth="300"/>
+        <Button text="Generate Report" onAction="#handleGenerateReport" styleClass="main-button"/>
+        <Button text="All Reports" onAction="#handleAllReports" styleClass="main-button"/>
+    </HBox>
+
+    <HBox spacing="25">
+        <Label fx:id="averageLabel" text="Average: -" style="-fx-font-size: 13px;"/>
+        <Label fx:id="letterGradeLabel" text="Grade: -" style="-fx-font-size: 13px;"/>
+        <Label fx:id="gpaLabel" text="GPA: -" style="-fx-font-size: 13px;"/>
+        <Label fx:id="statusLabel" text="Status: -" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <TextArea fx:id="reportArea" prefHeight="350" editable="false"
+              style="-fx-font-family: monospace; -fx-font-size: 13px;" VBox.vgrow="ALWAYS"/>
+
+    <Button text="Back to Dashboard" onAction="#handleBack" styleClass="logout-button"/>
+
+</VBox>
